@@ -1,0 +1,10 @@
+insert into author ( name, particularity, birthdate) values ( 'Fredric', 'Vila Franca de Xira' , '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Jeanne', 'Gaopai', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Hortense', 'Sepahua', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Alexandra', 'Želešice', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Emelen', 'Ridder', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Ansel', 'Stockholm', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Ellyn', null, '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Thorndike', 'Fuenlabrada', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Ciro', 'Xiuying', '1999-12-12');
+insert into author ( name, particularity, birthdate) values ( 'Sven', null, '1999-12-12');

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 public class AuthorResponse {
     private int id;
-    private String name;
     private String particularity;
+    private String name;
     private boolean hasParticularity;
 }

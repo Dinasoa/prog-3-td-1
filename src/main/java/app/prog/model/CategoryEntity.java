@@ -6,24 +6,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.List;
-
 @Entity
-@Table(name = "author")
+@Table(name = "category")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class AuthorEntity {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String particularity;
-
-    @Column(unique = true)
     private String name;
-    private LocalDate birthdate;
-    public boolean hasParticularity() { return particularity != null ;}
 }

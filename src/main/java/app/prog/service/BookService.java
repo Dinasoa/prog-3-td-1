@@ -1,6 +1,7 @@
 package app.prog.service;
 
 import app.prog.model.BookEntity;
+import app.prog.model.CategoryEntity;
 import app.prog.repository.BookRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -32,7 +32,7 @@ public class BookService {
     //TODO-3: should I use Integer here or int ? Why ?
     //We should use int over Integer because bookEntityID is not nullable
 
-    public BookEntity deleteBook(int id) {
+    public BookEntity deleteBook(Integer id) {
         /*
         TIPS: From the API, the Class Optional<T> is :
         A container object which may or may not contain a non-null value.

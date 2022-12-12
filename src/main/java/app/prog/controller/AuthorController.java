@@ -1,9 +1,7 @@
 package app.prog.controller;
 
-import app.prog.controller.mapper.AuthorMapper;
-import app.prog.controller.response.AuthorResponse;
-import app.prog.controller.response.CreateAuthor;
-import app.prog.controller.response.UpdateAuthor;
+import app.prog.controller.mapper.AuthorRestMapper;
+import app.prog.controller.response.*;
 import app.prog.model.AuthorEntity;
 import app.prog.model.BookEntity;
 import app.prog.service.AuthorService;
@@ -17,38 +15,37 @@ import java.util.List;
 
 public class AuthorController {
     private final AuthorService service;
-    private final AuthorMapper mapper;
+    private final AuthorRestMapper mapper;
 
     @GetMapping("/authors")
-    public List<AuthorResponse> getAllAuthors(){
+    public List<AuthorResponse> getAuthors() {
         return service.getAuthors().stream()
                 .map(mapper::toRest)
                 .toList();
     }
 
     @PostMapping("/authors")
-    public List<AuthorResponse> createAuthors(@RequestBody List<CreateAuthor> author){
-        List<AuthorEntity> domain = author.stream()
-                .map(mapper::toDomainCreate)
+    public List<AuthorResponse> createAuthor(@RequestBody List<CreateAuthorResponse> toCreate) {
+        List<AuthorEntity> domain = toCreate.stream()
+                .map(mapper::toDomain)
                 .toList();
-        return service.postAuthors(domain).stream()
+        return service.createAuthors(domain).stream()
                 .map(mapper::toRest)
                 .toList();
     }
 
     @PutMapping("/authors")
-    public List<AuthorResponse> updateAuthors(@RequestBody List<UpdateAuthor> author){
-        List<AuthorEntity> domain = author.stream()
-                .map(mapper::toDomainUpdate)
+    public List<AuthorResponse> updateAuthor(@RequestBody List<UpdateAuthorResponse> toUpdate) {
+        List<AuthorEntity> domain = toUpdate.stream()
+                .map(mapper::toDomain)
                 .toList();
         return service.updateAuthors(domain).stream()
                 .map(mapper::toRest)
                 .toList();
     }
 
-    @DeleteMapping("/author/{id_author}")
-    public AuthorEntity deleteAuthor(@PathVariable int authorId){
-        return service.deleteAuthors(authorId);
+    @DeleteMapping("/authors/{authorId}")
+    public AuthorResponse deleteAuthor(@PathVariable Integer authorId) {
+        return mapper.toRest(service.deleteAuthor(authorId));
     }
-
 }

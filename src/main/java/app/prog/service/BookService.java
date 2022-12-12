@@ -55,7 +55,6 @@ public class BookService {
         Link 2 : https://www.baeldung.com/exception-handling-for-rest-with-spring
          */
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, id + " Not found");
-//            throw new RuntimeException("BookEntity." + id + " not found");
         }
     }
 }
